@@ -68,8 +68,8 @@ Now serve your application and try to request a token using cURL
 php artisan serve
 curl -X POST http://localhost:8000/login -H 'Content-Type:application/json' -d '
 {
-    "email":"admin@example.com",
-    "password":"password"
+    "email":"gentritabazi01@gmail.com",
+    "password":"mypassword"
 }'
 ```
 
