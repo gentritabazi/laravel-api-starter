@@ -16,7 +16,7 @@ Larapi comes included with...
 
 First clone the repository.
 ```bash
-git clone https://github.com/esbenp/larapi my-api
+git clone https://github.com/gentritabazi01/Larapi
 ```
 
 Install dependencies.
