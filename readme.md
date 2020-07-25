@@ -59,7 +59,7 @@ If you want to save it elsewhere or change the naming be sure to modify the Logi
 You can quickly test if the authentication works by creating an user using the include command.
 
 ```bash
-php artisan users:add Esben esben@esben.dk 1234
+php artisan users:add Gentrit Abazi gentritabazi01@gmail.com mypassword
 ```
 
 Now serve your application and try to request a token using cURL
