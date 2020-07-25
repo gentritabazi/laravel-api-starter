@@ -7,7 +7,7 @@ Larapi comes included with...
 * Laravel 7.0.
 * Laravel Passport for OAuth Authentication, including a proxy for password and refresh-token grants.
 * A new directory structure optimized for separating infrastructure and domain code. Groups your controllers, models, etc. by resource-type. 
-* A modern exception handler for APIs with Sentry and Bugsnag integration out-of-the-box.
+* A modern exception handler for APIs.
 * A base controller class that gives sorting, filtering, eager loading and pagination for your endpoints.
 * A base repository class for requesting entities from your database.
 * A library for creating advanced structures of related entities.
