@@ -88,7 +88,7 @@ curl http://localhost:8000/users -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhb
 This should return a response like so
 
 ```json
-{"users":[{"id":1,"name":"Esben","email":"esben@esben.dk","created_at":"2017-03-19 19:59:15","updated_at":"2017-03-19 19:59:15"}]}
+{"users":[{"id":1,"first_name":"Gentrit","last_name":"Abazi","email":"gentritabazi01@gmail.com","name":"Gentrit Abazi"}]}
 ```
 
 You can refresh a new token by requesting `POST /login/refresh` and logout using `POST /logout`.
