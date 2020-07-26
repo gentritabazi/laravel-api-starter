@@ -12,6 +12,8 @@ Larapi comes included with...
 * A base repository class for requesting entities from your database.
 * A library for creating advanced structures of related entities.
 
+### [Check Larapi Documentation](https://github.com/gentritabazi01/larapi-components)
+
 ### Installation
 
 First clone the repository.
