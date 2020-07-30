@@ -41,7 +41,7 @@ class User extends Authenticatable
     *
     * @var array
     */
-    public static $whiteListFilter = ['fist_name', 'last_name'];
+    public static $whiteListFilter = ['first_name', 'last_name'];
 
     /**
      * Define setter for the password field.
