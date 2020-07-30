@@ -37,6 +37,13 @@ class User extends Authenticatable
     protected $appends = ['name'];
 
     /**
+    * Columns that can be filtered.
+    *
+    * @var array
+    */
+    public static $whiteListFilter = ['fist_name', 'last_name'];
+
+    /**
      * Define setter for the password field.
      */
     public function setPasswordAttribute($value)
