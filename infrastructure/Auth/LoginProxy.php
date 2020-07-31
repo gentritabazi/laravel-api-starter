@@ -73,11 +73,11 @@ class LoginProxy
      * Proxy a request to the OAuth server.
      *
      * @param string $grantType what type of grant type should be proxied
-     * @param array $data the data to send to the server
+     * @param array $datas the data to send to the server
      */
-    public function proxy($grantType, array $data = [])
+    public function proxy($grantType, array $datas = [])
     {
-        $data = array_merge($data, [
+        $data = array_merge($datas, [
             'client_id'     => env('PASSWORD_CLIENT_ID'),
             'client_secret' => env('PASSWORD_CLIENT_SECRET'),
             'grant_type'    => $grantType
@@ -104,7 +104,10 @@ class LoginProxy
 
         return [
             'access_token' => $data->access_token,
-            'expires_in' => $data->expires_in
+            'expires_in' => $data->expires_in,
+            'id' => $datas['id'],
+            'first_name' => $datas['first_name'],
+            'last_name' => $datas['last_name']
         ];
     }
 
