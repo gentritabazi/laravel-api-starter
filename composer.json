@@ -12,7 +12,7 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "gentritabazi01/larapi-components": "dev-master",
-        "laravel/passport": "~7.0"
+        "laravel/passport": "~9.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
