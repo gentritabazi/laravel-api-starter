@@ -160,6 +160,7 @@ return [
          */
         Infrastructure\Providers\AppServiceProvider::class,
         Infrastructure\Auth\AuthServiceProvider::class,
+        Infrastructure\Providers\EventServiceProvider::class,
         Infrastructure\Http\RouteServiceProvider::class,
         
     ],
