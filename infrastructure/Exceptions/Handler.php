@@ -59,46 +59,6 @@ class Handler extends ExceptionHandler
     */
     public function render($request, Throwable $e)
     {
-        $status = 400;
-
-        if ($this->isHttpException($e)) {
-            $status = $e->getStatusCode();
-        }
-
-        switch ($status) {
-            case 422:
-                $decoded = json_decode($e->getMessage(), true);
-        
-                if (json_last_error() !== JSON_ERROR_NONE) {
-                    $decoded = [[$e->getMessage()]];
-                }
-
-                $data = array_reduce($decoded, function ($carry, $item) use ($e) {
-                    return array_merge($carry, array_map(function ($current) use ($e) {
-                        return ['message' => $current];
-                    }, $item));
-                }, []);
-
-                $json = [
-                    'status' => $status,
-                    'errors' => $data
-                ];
-                break;
-
-            default:
-                $json = [
-                    'success' => $status,
-                    'errors' => [[
-                        'message' => $e->getMessage(),
-                        'exception' => (string) $e,
-                        'line' => $e->getLine(),
-                        'file' => $e->getFile()
-                    ]],
-                ];
-        }
-
-        return response()->json($json, $status);
-        
-        return parent::render($request, $e);
+        return renderException($request, $e);
     }
 }
