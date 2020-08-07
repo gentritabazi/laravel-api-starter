@@ -2,7 +2,6 @@
 
 namespace Api\Users\Events;
 
-use Infrastructure\Events\Event;
 use Api\Users\Models\User;
 
 class UserWasCreated extends Event
