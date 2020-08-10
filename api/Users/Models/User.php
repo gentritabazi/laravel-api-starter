@@ -2,7 +2,6 @@
 
 namespace Api\Users\Models;
 
-use Api\Users\Models\Test;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
