@@ -11,6 +11,8 @@ Larapi comes included with...
 * A base controller class that gives sorting, filtering, eager loading and pagination for your endpoints.
 * A base repository class for requesting entities from your database.
 * A library for creating advanced structures of related entities.
+![...](pic.png?raw=true "...")
+
 
 ### [Check Larapi Documentation](https://github.com/gentritabazi01/larapi-components)
 
