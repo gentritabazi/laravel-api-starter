@@ -22,7 +22,7 @@ class AddUserCommand extends Command
     protected $description = 'Adds a new user';
 
     /**
-     * User repository to persist user in database
+     * User repository to persist user in database.
      *
      * @var UserRepository
      */
@@ -32,6 +32,7 @@ class AddUserCommand extends Command
      * Create a new command instance.
      *
      * @param  UserRepository  $userRepository
+     *
      * @return void
      */
     public function __construct(UserRepository $userRepository)
