@@ -29,7 +29,7 @@ class UserService
 
     public function getById($userId, array $options = [])
     {
-        $user = $this->getRequestedUser($userId);
+        $user = $this->getRequestedUser($userId, $options);
         
         return $user;
     }
@@ -63,9 +63,9 @@ class UserService
         $this->dispatcher->dispatch(new UserWasDeleted($user));
     }
 
-    private function getRequestedUser($userId)
+    private function getRequestedUser($userId, array $options = [])
     {
-        $user = $this->userRepository->getById($userId);
+        $user = $this->userRepository->getById($userId, $options);
 
         if (is_null($user)) {
             throw new UserNotFoundException;
