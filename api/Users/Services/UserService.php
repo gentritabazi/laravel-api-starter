@@ -2,9 +2,6 @@
 
 namespace Api\Users\Services;
 
-use Exception;
-use Illuminate\Auth\AuthManager;
-use Illuminate\Database\DatabaseManager;
 use Illuminate\Events\Dispatcher;
 use Api\Users\Exceptions\UserNotFoundException;
 use Api\Users\Events\UserWasCreated;
@@ -14,24 +11,15 @@ use Api\Users\Repositories\UserRepository;
 
 class UserService
 {
-    private $auth;
-
-    private $database;
-
+    private $userRepository;
     private $dispatcher;
 
-    private $userRepository;
-
     public function __construct(
-        AuthManager $auth,
-        DatabaseManager $database,
-        Dispatcher $dispatcher,
-        UserRepository $userRepository
+        UserRepository $userRepository,
+        Dispatcher $dispatcher
     ) {
-        $this->auth = $auth;
-        $this->database = $database;
-        $this->dispatcher = $dispatcher;
         $this->userRepository = $userRepository;
+        $this->dispatcher = $dispatcher;
     }
 
     public function getAll($options = [])
@@ -80,7 +68,7 @@ class UserService
         $user = $this->userRepository->getById($userId);
 
         if (is_null($user)) {
-            throw new UserNotFoundException();
+            throw new UserNotFoundException;
         }
 
         return $user;
