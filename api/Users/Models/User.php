@@ -5,10 +5,11 @@ namespace Api\Users\Models;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Infrastructure\Database\Eloquent\Traits\TransactionalAwareEvents;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable;
+    use HasApiTokens, Notifiable, TransactionalAwareEvents;
     
     /**
      * The attributes that are mass assignable.
