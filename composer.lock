@@ -637,12 +637,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gentritabazi01/larapi-components.git",
-                "reference": "4d1941601c0828b0a259d383f900b6a436547ca1"
+                "reference": "78fc2803963f0f7010984963a69640d5d3bd77c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gentritabazi01/larapi-components/zipball/4d1941601c0828b0a259d383f900b6a436547ca1",
-                "reference": "4d1941601c0828b0a259d383f900b6a436547ca1",
+                "url": "https://api.github.com/repos/gentritabazi01/larapi-components/zipball/78fc2803963f0f7010984963a69640d5d3bd77c6",
+                "reference": "78fc2803963f0f7010984963a69640d5d3bd77c6",
                 "shasum": ""
             },
             "require": {
@@ -669,7 +669,7 @@
             ],
             "description": "Larapi components",
             "homepage": "https://github.com/gentritabazi01/larapi-components",
-            "time": "2020-08-14T16:48:26+00:00"
+            "time": "2020-08-21T19:36:08+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -6241,6 +6241,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {

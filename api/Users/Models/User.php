@@ -5,7 +5,7 @@ namespace Api\Users\Models;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Infrastructure\Database\Eloquent\Traits\TransactionalAwareEvents;
+use Gentritabazi01\LarapiComponents\Database\TransactionalAwareEvents;
 
 class User extends Authenticatable
 {
