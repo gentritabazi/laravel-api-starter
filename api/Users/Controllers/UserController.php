@@ -3,9 +3,10 @@
 namespace Api\Users\Controllers;
 
 use Illuminate\Http\Request;
+use Api\Users\Services\UserService;
 use Infrastructure\Http\Controller;
 use Api\Users\Requests\CreateUserRequest;
-use Api\Users\Services\UserService;
+use Api\Users\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -43,7 +44,7 @@ class UserController extends Controller
         return $this->response($this->userService->create($data), 201);
     }
 
-    public function update($userId, Request $request)
+    public function update($userId, UpdateUserRequest $request)
     {
         $data = $request->get('user', []);
 
