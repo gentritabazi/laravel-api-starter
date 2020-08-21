@@ -162,7 +162,7 @@ return [
         Infrastructure\Auth\AuthServiceProvider::class,
         Infrastructure\Providers\EventServiceProvider::class,
         Infrastructure\Http\RouteServiceProvider::class,
-        
+        Api\Users\Providers\UserServiceProvider::class
     ],
 
     /*
