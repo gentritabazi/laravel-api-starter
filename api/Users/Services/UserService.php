@@ -2,12 +2,14 @@
 
 namespace Api\Users\Services;
 
+use Exception;
 use Illuminate\Events\Dispatcher;
-use Api\Users\Exceptions\UserNotFoundException;
+use Illuminate\Support\Facades\DB;
 use Api\Users\Events\UserWasCreated;
 use Api\Users\Events\UserWasDeleted;
 use Api\Users\Events\UserWasUpdated;
 use Api\Users\Repositories\UserRepository;
+use Api\Users\Exceptions\UserNotFoundException;
 
 class UserService
 {
@@ -36,31 +38,52 @@ class UserService
 
     public function create($data)
     {
-        $user = $this->userRepository->create($data);
+        try {
+            DB::beginTransaction();
 
-        $this->dispatcher->dispatch(new UserWasCreated($user));
+            $user = $this->userRepository->create($data);
 
-        return $user;
+            $this->dispatcher->dispatch(new UserWasCreated($user));
+
+            DB::commit();
+            
+            return $user;
+        } catch (Exception $e) {
+            DB::rollback();
+            throw $e;
+        }
     }
 
     public function update($userId, array $data)
     {
-        $user = $this->getRequestedUser($userId);
+        try {
+            $user = $this->getRequestedUser($userId);
 
-        $this->userRepository->update($user, $data);
+            $this->userRepository->update($user, $data);
 
-        $this->dispatcher->dispatch(new UserWasUpdated($user));
+            $this->dispatcher->dispatch(new UserWasUpdated($user));
 
-        return $user;
+            return $user;
+        } catch (Exception $e) {
+            DB::rollback();
+            throw $e;
+        }
     }
 
     public function delete($userId)
     {
-        $user = $this->getRequestedUser($userId);
+        try {
+            $user = $this->getRequestedUser($userId);
 
-        $this->userRepository->delete($userId);
+            $this->userRepository->delete($userId);
 
-        $this->dispatcher->dispatch(new UserWasDeleted($user));
+            $this->dispatcher->dispatch(new UserWasDeleted($user));
+
+            return $user;
+        } catch (Exception $e) {
+            DB::rollback();
+            throw $e;
+        }
     }
 
     private function getRequestedUser($userId, array $options = [])
