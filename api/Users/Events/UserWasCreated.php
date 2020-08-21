@@ -3,6 +3,7 @@
 namespace Api\Users\Events;
 
 use Api\Users\Models\User;
+use Infrastructure\Events\Event;
 
 class UserWasCreated extends Event
 {
