@@ -57,11 +57,15 @@ class UserService
     public function update($userId, array $data)
     {
         try {
+            DB::beginTransaction();
+
             $user = $this->getRequestedUser($userId);
 
             $this->userRepository->update($user, $data);
 
             $this->dispatcher->dispatch(new UserWasUpdated($user));
+
+            DB::commit();
 
             return $user;
         } catch (Exception $e) {
@@ -73,11 +77,15 @@ class UserService
     public function delete($userId)
     {
         try {
+            DB::beginTransaction();
+            
             $user = $this->getRequestedUser($userId);
 
             $this->userRepository->delete($userId);
 
             $this->dispatcher->dispatch(new UserWasDeleted($user));
+
+            DB::commit();
 
             return $user;
         } catch (Exception $e) {
