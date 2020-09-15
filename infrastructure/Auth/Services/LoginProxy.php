@@ -34,7 +34,7 @@ class LoginProxy
     }
 
     /**
-     * Attempt to create an access token using user credentials
+     * Attempt to create an access token using user credentials.
      *
      * @param string $email
      * @param string $password
@@ -43,22 +43,22 @@ class LoginProxy
     {
         $user = $this->userRepository->getWhere('email', $email)->first();
 
-        if (!is_null($user)) {
-            return $this->proxy('password', [
-                'id' => $user->id,
-                'first_name' => $user->first_name,
-                'last_name' => $user->last_name,
-                'username' => $email,
-                'password' => $password
-            ]);
+        if (is_null($user)) {
+            throw new InvalidCredentialsException();
         }
 
-        throw new InvalidCredentialsException();
+        return $this->proxy('password', [
+            'id' => $user->id,
+            'first_name' => $user->first_name,
+            'last_name' => $user->last_name,
+            'username' => $email,
+            'password' => $password
+        ]);
     }
 
     /**
      * Attempt to refresh the access token used a refresh token that
-     * has been saved in a cookie
+     * has been saved in a cookie.
      */
     public function attemptRefresh()
     {
@@ -72,8 +72,8 @@ class LoginProxy
     /**
      * Proxy a request to the OAuth server.
      *
-     * @param string $grantType what type of grant type should be proxied
-     * @param array $datas the data to send to the server
+     * @param string $grantType what type of grant type should be proxied.
+     * @param array $datas the data to send to the server.
      */
     public function proxy($grantType, array $datas = [])
     {
