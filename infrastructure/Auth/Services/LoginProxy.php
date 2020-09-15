@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\Auth;
+namespace Infrastructure\Auth\Services;
 
 use Illuminate\Foundation\Application;
 use Infrastructure\Auth\Exceptions\InvalidCredentialsException;

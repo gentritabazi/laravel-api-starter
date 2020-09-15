@@ -56,7 +56,7 @@ PASSWORD_CLIENT_ID=2
 PASSWORD_CLIENT_SECRET=FJWQRS3PQj6atM6fz5f6AtDboo59toGplcuUYrKL
 ```
 
-If you want to save it elsewhere or change the naming be sure to modify the LoginProxy in `infrastructure/Auth/LoginProxy.php`
+If you want to save it elsewhere or change the naming be sure to modify the LoginProxy in `infrastructure/Auth/Services/LoginProxy.php`
 
 ### Test installation
 
