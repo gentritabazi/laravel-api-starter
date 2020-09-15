@@ -12,7 +12,7 @@ class UserObserver
      * @param  \Api\Users\Models\User  $user
      * @return void
      */
-    public function afterCommitCreated(User $user)
+    public function created(User $user)
     {
         //
     }
@@ -23,7 +23,7 @@ class UserObserver
      * @param  \Api\Users\Models\User  $user
      * @return void
      */
-    public function afterCommitUpdated(User $user)
+    public function updated(User $user)
     {
         //
     }
@@ -34,7 +34,7 @@ class UserObserver
      * @param  \Api\Users\Models\User  $user
      * @return void
      */
-    public function afterCommitDeleted(User $user)
+    public function deleted(User $user)
     {
         //
     }
@@ -45,7 +45,7 @@ class UserObserver
      * @param  \Api\Users\Models\User  $user
      * @return void
      */
-    public function afterCommitForceDeleted(User $user)
+    public function forceDeleted(User $user)
     {
         //
     }
