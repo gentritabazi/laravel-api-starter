@@ -14,7 +14,7 @@ Larapi comes included with...
 ![...](pic.png?raw=true "...")
 
 
-### [Check Larapi Documentation](https://github.com/gentritabazi01/larapi-components)
+### [This project is built with one2tek/larapi package](https://github.com/one2tek/larapi)
 
 ### Installation
 

@@ -55,7 +55,7 @@ return [
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
-            'tap' => [Gentritabazi01\LarapiComponents\Core\SlackLogger::class],
+            'tap' => [one2tek\larapi\Core\SlackLogger::class],
             'username' => 'Laravel Log',
             'emoji' => ':boom:',
             'level' => 'debug',

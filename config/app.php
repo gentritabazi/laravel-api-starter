@@ -151,9 +151,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Laravel\Passport\PassportServiceProvider::class,
-        Gentritabazi01\LarapiComponents\Providers\LaravelServiceProvider::class,
-        Gentritabazi01\LarapiComponents\Providers\RouteServiceProvider::class,
+        one2tek\larapi\Providers\RouteServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -161,7 +159,6 @@ return [
         Infrastructure\Providers\AppServiceProvider::class,
         Infrastructure\Providers\AuthServiceProvider::class,
         Infrastructure\Providers\EventServiceProvider::class,
-        Infrastructure\Http\RouteServiceProvider::class,
         Api\Users\Providers\UserServiceProvider::class
     ],
 

@@ -9,10 +9,6 @@ return [
     'protection_middleware' => [
         'auth:api'
     ],
-
-    'resource_namespace' => 'resources',
-
-    'language_folder_name' => 'lang',
-
-    'view_folder_name' => 'views'
+    
+    'join-columns' => [],
 ];

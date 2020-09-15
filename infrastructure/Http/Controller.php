@@ -3,7 +3,7 @@
 namespace Infrastructure\Http;
 
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Gentritabazi01\LarapiComponents\Controllers\LaravelController;
+use one2tek\larapi\Controllers\LaravelController;
 
 abstract class Controller extends LaravelController
 {
