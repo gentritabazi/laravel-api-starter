@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\Auth\Middleware;
+namespace Infrastructure\Http\Middlewares;
 
 use Closure;
 use Illuminate\Foundation\Application;

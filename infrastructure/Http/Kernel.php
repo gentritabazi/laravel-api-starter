@@ -38,7 +38,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Infrastructure\Auth\Middleware\AccessTokenChecker::class,
+        'auth' => \Infrastructure\Http\Middlewares\AccessTokenChecker::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
