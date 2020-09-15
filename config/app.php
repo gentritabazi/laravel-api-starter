@@ -159,7 +159,7 @@ return [
          * Application Service Providers...
          */
         Infrastructure\Providers\AppServiceProvider::class,
-        Infrastructure\Auth\AuthServiceProvider::class,
+        Infrastructure\Providers\AuthServiceProvider::class,
         Infrastructure\Providers\EventServiceProvider::class,
         Infrastructure\Http\RouteServiceProvider::class,
         Api\Users\Providers\UserServiceProvider::class
