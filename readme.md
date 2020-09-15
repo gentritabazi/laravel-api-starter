@@ -1,7 +1,7 @@
 ### Introduction
 
 **Larapi** offers you to do modern API development in Laravel.
-Package is copied from [esbenp/larapi](https://github.com/esbenp/larapi) with some cool modifications and also support for new versions of Laravel.
+Package is inspired from [esbenp/larapi](https://github.com/esbenp/larapi) with some cool modifications and also support for new versions of Laravel.
 
 Larapi comes included with...
 * Laravel 7.0.
