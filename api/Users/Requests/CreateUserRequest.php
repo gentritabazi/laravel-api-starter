@@ -21,11 +21,4 @@ class CreateUserRequest extends ApiRequest
             'user.password' => 'required|string|min:8'
         ];
     }
-
-    public function attributes()
-    {
-        return [
-            'user.email' => 'the user\'s email'
-        ];
-    }
 }

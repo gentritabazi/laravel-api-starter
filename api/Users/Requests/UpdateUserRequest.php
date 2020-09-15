@@ -21,11 +21,4 @@ class UpdateUserRequest extends ApiRequest
             'user.password' => 'filled|string|min:8'
         ];
     }
-
-    public function attributes()
-    {
-        return [
-            'user.email' => 'the user\'s email'
-        ];
-    }
 }
