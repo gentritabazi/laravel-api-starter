@@ -4,7 +4,7 @@
 Package is inspired from [esbenp/larapi](https://github.com/esbenp/larapi) with some cool modifications and also support for new versions of Laravel.
 
 Larapi comes included with...
-* Support for [Laravel 7.0](https://github.com/gentritabazi01/Larapi/tree/Laravel-7) and [Laravel 8.0](https://github.com/gentritabazi01/Larapi/Laravel-8).
+* Support for [Laravel 7.0](https://github.com/gentritabazi01/Larapi/tree/Laravel-7) and [Laravel 8.0](https://github.com/gentritabazi01/Larapi/tree/Laravel-8).
 * Laravel Passport for OAuth Authentication, including a proxy for password and refresh-token grants.
 * A new directory structure optimized for separating infrastructure and domain code. Groups your controllers, models, etc. by resource-type. 
 * A modern exception handler for APIs.
