@@ -9,6 +9,6 @@ return [
     'protection_middleware' => [
         'auth:api'
     ],
-    
-    'join-columns' => [],
+
+    'slack_formatter' => '\Infrastructure\Formatters\SlackFormatter'
 ];
