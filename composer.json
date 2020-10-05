@@ -13,7 +13,7 @@
         "laravel/framework": "~7.0",
         "laravel/passport": "~9.0",
         "laravel/tinker": "^2.0",
-        "one2tek/larapi": "^1.0"
+        "one2tek/larapi": "^1.0.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
