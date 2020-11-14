@@ -5,6 +5,7 @@ namespace Api\Users\Providers;
 use Api\Users\Models\User;
 use Api\Users\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
+use Api\Users\Providers\UserEventServiceProvider;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -15,7 +16,8 @@ class UserServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Event service provider
+        $this->app->register(UserEventServiceProvider::class);
     }
 
     /**
