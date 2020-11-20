@@ -22,7 +22,8 @@ class UserController extends Controller
         $resourceOptions = $this->parseResourceOptions();
 
         $data = $this->userService->getAll($resourceOptions);
-        $parsedData = $this->parseData($data, $resourceOptions, 'users');
+        $parsedData = $this->parseData($data['rows'], $resourceOptions, 'users');
+        $parsedData['total_data'] = $data['total_data'];
 
         return $this->response($parsedData);
     }

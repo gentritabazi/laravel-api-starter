@@ -4,6 +4,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Name
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of your application. This value is used when the
+    | framework needs to place the application's name in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'name' => env('APP_NAME', 'Laravel'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
@@ -149,9 +162,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
+         * Packages Service Providers...
          */
-        one2tek\larapi\Providers\RouteServiceProvider::class,
+        //
 
         /*
          * Application Service Providers...
@@ -159,6 +172,7 @@ return [
         Infrastructure\Providers\AppServiceProvider::class,
         Infrastructure\Providers\AuthServiceProvider::class,
         Infrastructure\Providers\EventServiceProvider::class,
+        Infrastructure\Providers\RouteServiceProvider::class,
         Api\Users\Providers\UserServiceProvider::class
     ],
 

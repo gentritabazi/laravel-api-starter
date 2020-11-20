@@ -26,7 +26,7 @@ class UserService
 
     public function getAll($options = [])
     {
-        return $this->userRepository->get($options);
+        return $this->userRepository->getWithCount($options);
     }
 
     public function getById($userId, array $options = [])
