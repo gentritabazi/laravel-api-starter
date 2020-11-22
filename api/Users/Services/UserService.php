@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\DB;
 use Api\Users\Events\UserWasCreated;
 use Api\Users\Events\UserWasDeleted;
 use Api\Users\Events\UserWasUpdated;
+use Illuminate\Support\Facades\Gate;
 use Api\Users\Repositories\UserRepository;
 use Api\Users\Exceptions\UserNotFoundException;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class UserService
 {
@@ -56,10 +58,14 @@ class UserService
 
     public function update($userId, array $data)
     {
+        $user = $this->getRequestedUser($userId, ['select' => ['id']]);
+
+        if (Gate::denies('update-user', $user)) {
+            throw new AccessDeniedHttpException('Cannot update this user.');
+        }
+
         try {
             DB::beginTransaction();
-
-            $user = $this->getRequestedUser($userId);
 
             $this->userRepository->update($user, $data);
 
@@ -76,10 +82,10 @@ class UserService
 
     public function delete($userId)
     {
+        $user = $this->getRequestedUser($userId);
+
         try {
             DB::beginTransaction();
-            
-            $user = $this->getRequestedUser($userId);
 
             $this->userRepository->delete($userId);
 

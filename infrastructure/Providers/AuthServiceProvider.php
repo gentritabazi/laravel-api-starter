@@ -2,9 +2,11 @@
 
 namespace Infrastructure\Providers;
 
+use Api\Users\Policies\UserPolicy;
 use Carbon\Carbon;
 use Laravel\Passport\Passport;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -36,5 +38,7 @@ class AuthServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(Carbon::now()->addMinutes(1440));
 
         Passport::refreshTokensExpireIn(Carbon::now()->addDays(10));
+
+        Gate::define('update-user', [UserPolicy::class, 'update']);
     }
 }
