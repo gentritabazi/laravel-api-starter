@@ -82,7 +82,7 @@ class UserService
 
     public function delete($userId)
     {
-        $user = $this->getRequestedUser($userId);
+        $user = $this->getRequestedUser($userId, ['select' => ['id']]);
 
         try {
             DB::beginTransaction();
