@@ -17,7 +17,5 @@ return [
     'extra_routes_namespaces' => [
         'Api' => base_path() . DIRECTORY_SEPARATOR . 'api',
         'Infrastructure' => base_path() . DIRECTORY_SEPARATOR . 'infrastructure'
-    ],
-
-    'slack_formatter' => '\Infrastructure\Formatters\SlackFormatter'
+    ]
 ];
