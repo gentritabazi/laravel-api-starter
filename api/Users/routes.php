@@ -1,5 +1,7 @@
 <?php
 
+/** @var \Illuminate\Routing\Router $router */
+
 $router->get('/users', 'UserController@getAll');
 $router->get('/users/{id}', 'UserController@getById');
 $router->post('/users', 'UserController@create');
