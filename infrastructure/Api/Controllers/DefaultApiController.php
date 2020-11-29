@@ -9,8 +9,9 @@ class DefaultApiController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Larapi',
+            'title' => config('app.name'),
             'date' => date('Y-m-d'),
+            'timezone' => config('app.timezone'),
             'laravel_version' => app()->version()
         ];
 
