@@ -2,15 +2,10 @@
 
 namespace Api\Users\Requests;
 
-use Infrastructure\Http\ApiRequest;
+use Infrastructure\Abstracts\ApiRequest;
 
 class UpdateUserRequest extends ApiRequest
 {
-    public function authorize()
-    {
-        return true;
-    }
-
     public function rules()
     {
         return [

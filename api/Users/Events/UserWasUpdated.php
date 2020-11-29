@@ -3,7 +3,7 @@
 namespace Api\Users\Events;
 
 use Api\Users\Models\User;
-use Infrastructure\Events\Event;
+use Infrastructure\Abstracts\Event;
 
 class UserWasUpdated extends Event
 {
