@@ -2,12 +2,18 @@
 
 namespace Infrastructure\Api\Controllers;
 
-use Infrastructure\Http\Controller as BaseController;
+use Infrastructure\Abstracts\Controller;
 
-class DefaultApiController extends BaseController
+class DefaultApiController extends Controller
 {
     public function index()
     {
-        return $this->response(['title' => 'Larapi', 'date' => date('Y-m-d'), 'laravel_version' => app()->version()]);
+        $data = [
+            'title' => 'Larapi',
+            'date' => date('Y-m-d'),
+            'laravel_version' => app()->version()
+        ];
+
+        return $this->response($data);
     }
 }
