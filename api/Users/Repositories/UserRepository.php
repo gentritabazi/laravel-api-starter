@@ -3,7 +3,7 @@
 namespace Api\Users\Repositories;
 
 use Api\Users\Models\User;
-use Infrastructure\Database\Eloquent\Repository;
+use Infrastructure\Abstracts\Repository;
 
 class UserRepository extends Repository
 {

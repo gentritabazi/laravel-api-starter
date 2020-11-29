@@ -3,8 +3,9 @@
 namespace Api\Users\Observers;
 
 use Api\Users\Models\User;
+use Infrastructure\Abstracts\Observer;
 
-class UserObserver
+class UserObserver extends Observer
 {
     /**
      * Handle the User "created" event.

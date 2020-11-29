@@ -2,9 +2,8 @@
 
 namespace Api\Users\Controllers;
 
-use Illuminate\Http\Request;
 use Api\Users\Services\UserService;
-use Infrastructure\Http\Controller;
+use Infrastructure\Abstracts\Controller;
 use Api\Users\Requests\CreateUserRequest;
 use Api\Users\Requests\UpdateUserRequest;
 

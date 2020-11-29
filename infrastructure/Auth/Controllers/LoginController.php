@@ -5,7 +5,7 @@ namespace Infrastructure\Auth\Controllers;
 use Illuminate\Http\Request;
 use Infrastructure\Auth\Services\LoginProxy;
 use Infrastructure\Auth\Requests\LoginRequest;
-use Infrastructure\Http\Controller;
+use Infrastructure\Abstracts\Controller;
 
 class LoginController extends Controller
 {
