@@ -19,5 +19,8 @@ return [
         'Infrastructure' => base_path() . DIRECTORY_SEPARATOR . 'infrastructure'
     ],
 
-    'slack_formatter' => '\Infrastructure\Formatters\SlackFormatter'
+    'exceptions_formatters' => [
+        Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException::class => one2tek\larapi\ExceptionsFormatters\UnprocessableEntityHttpExceptionFormatter::class,
+        Throwable::class => one2tek\larapi\ExceptionsFormatters\ExceptionFormatter::class
+    ]
 ];
