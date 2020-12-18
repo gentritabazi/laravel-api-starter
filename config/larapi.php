@@ -1,6 +1,9 @@
 <?php
 
 return [
+
+    'modules_folder' => 'api',
+
     'extra_routes' => [
         'routes' => [
             'middleware' => ['auth:api'],
@@ -23,4 +26,5 @@ return [
         Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException::class => one2tek\larapi\ExceptionsFormatters\UnprocessableEntityHttpExceptionFormatter::class,
         Throwable::class => one2tek\larapi\ExceptionsFormatters\ExceptionFormatter::class
     ]
+    
 ];
