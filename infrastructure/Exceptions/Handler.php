@@ -3,6 +3,7 @@
 namespace Infrastructure\Exceptions;
 
 use Throwable;
+use one2tek\larapi\Exceptions\ApiException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -59,6 +60,8 @@ class Handler extends ExceptionHandler
     */
     public function render($request, Throwable $e)
     {
-        return renderException($request, $e);
+        $apiException = new ApiException($request, $e);
+        
+        return $apiException->generateExceptionResponse();
     }
 }
