@@ -158,6 +158,7 @@ return [
         Infrastructure\Providers\AppServiceProvider::class,
         Infrastructure\Providers\AuthServiceProvider::class,
         Infrastructure\Providers\EventServiceProvider::class,
+        Infrastructure\Providers\RouteServiceProvider::class,
         Api\Users\Providers\UserServiceProvider::class
     ],
 
