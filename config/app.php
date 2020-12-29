@@ -151,7 +151,6 @@ return [
         /*
          * Package Service Providers...
          */
-        one2tek\larapi\Providers\RouteServiceProvider::class,
 
         /*
          * Application Service Providers...
