@@ -21,10 +21,8 @@ class UserController extends Controller
         $resourceOptions = $this->parseResourceOptions();
 
         $data = $this->userService->getAll($resourceOptions);
-        $parsedData = $this->parseData($data['rows'], $resourceOptions, 'users');
-        $parsedData['total_data'] = $data['total_data'];
 
-        return $this->response($parsedData);
+        return $this->response($data);
     }
 
     public function getById($userId)
@@ -32,9 +30,8 @@ class UserController extends Controller
         $resourceOptions = $this->parseResourceOptions();
 
         $data = $this->userService->getById($userId, $resourceOptions);
-        $parsedData = $this->parseData($data, $resourceOptions, 'user');
 
-        return $this->response($parsedData);
+        return $this->response(data);
     }
 
     public function create(CreateUserRequest $request)
