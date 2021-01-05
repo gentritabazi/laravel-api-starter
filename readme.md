@@ -29,7 +29,7 @@ Install dependencies.
 composer install
 ```
 
-Copy the `.env` file an create an application key.
+Copy the `.env` file an create and application key.
 
 ```
 cp .env.example .env && php artisan key:generate
