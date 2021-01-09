@@ -86,7 +86,7 @@ class LoginProxy
         $response = $this->apiConsumer->post('/oauth/token', $data);
 
         if (!$response->isSuccessful()) {
-            throw new InvalidCredentialsException();
+            throw new InvalidCredentialsException($response);
         }
 
         $data = json_decode($response->getContent());
