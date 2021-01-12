@@ -35,6 +35,12 @@ Copy the `.env` file an create and application key.
 cp .env.example .env && php artisan key:generate
 ```
 
+Create a symbolic link from `public/storage` to `storage/app/public`. 
+
+```
+php artisan storage:link
+```
+
 Migrate the tables.
 
 ```
