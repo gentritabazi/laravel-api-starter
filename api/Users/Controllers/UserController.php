@@ -38,7 +38,7 @@ class UserController extends Controller
     {
         $data = $request->validated();
 
-        $sendData = $this->userService->create($data);
+        $sendData['user'] = $this->userService->create($data);
 
         return $this->response($sendData, 201);
     }
