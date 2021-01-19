@@ -9,11 +9,10 @@ class UpdateUserRequest extends ApiRequest
     public function rules()
     {
         return [
-            'user' => 'array|required',
-            'user.email' => 'filled|email|unique:users,email',
-            'user.first_name' => 'filled|string',
-            'user.last_name' => 'filled|string',
-            'user.password' => 'filled|string|min:8'
+            'email' => 'filled|email|unique:users,email',
+            'first_name' => 'filled|string',
+            'last_name' => 'filled|string',
+            'password' => 'filled|string|min:8'
         ];
     }
 }

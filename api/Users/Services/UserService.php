@@ -2,9 +2,7 @@
 
 namespace Api\Users\Services;
 
-use Exception;
 use Illuminate\Events\Dispatcher;
-use Illuminate\Support\Facades\DB;
 use Api\Users\Events\UserWasCreated;
 use Api\Users\Events\UserWasDeleted;
 use Api\Users\Events\UserWasUpdated;
@@ -40,64 +38,35 @@ class UserService
 
     public function create($data)
     {
-        try {
-            DB::beginTransaction();
+        $user = $this->userRepository->create($data);
 
-            $user = $this->userRepository->create($data);
+        $this->dispatcher->dispatch(new UserWasCreated($user));
 
-            $this->dispatcher->dispatch(new UserWasCreated($user));
-
-            DB::commit();
-            
-            return $user;
-        } catch (Exception $e) {
-            DB::rollback();
-            throw $e;
-        }
+        return $user;
     }
 
     public function update($userId, array $data)
     {
-        $user = $this->getRequestedUser($userId, ['select' => ['id']]);
+        $user = $this->getRequestedUser($userId);
 
         if (Gate::denies('update-user', $user)) {
             throw new AccessDeniedHttpException('Cannot update this user.');
         }
 
-        try {
-            DB::beginTransaction();
+        $this->userRepository->update($user, $data);
 
-            $this->userRepository->update($user, $data);
-
-            $this->dispatcher->dispatch(new UserWasUpdated($user));
-
-            DB::commit();
-
-            return $user;
-        } catch (Exception $e) {
-            DB::rollback();
-            throw $e;
-        }
+        $this->dispatcher->dispatch(new UserWasUpdated($user));
     }
 
     public function delete($userId)
     {
         $user = $this->getRequestedUser($userId, ['select' => ['id']]);
 
-        try {
-            DB::beginTransaction();
+        $this->userRepository->delete($userId);
 
-            $this->userRepository->delete($userId);
+        $this->dispatcher->dispatch(new UserWasDeleted($user));
 
-            $this->dispatcher->dispatch(new UserWasDeleted($user));
-
-            DB::commit();
-
-            return $user;
-        } catch (Exception $e) {
-            DB::rollback();
-            throw $e;
-        }
+        return $user;
     }
 
     private function getRequestedUser($userId, array $options = [])
