@@ -6,7 +6,7 @@ use Illuminate\Foundation\Application;
 use Infrastructure\Auth\Exceptions\InvalidCredentialsException;
 use Api\Users\Repositories\UserRepository;
 
-class LoginProxy
+class LoginService
 {
     const REFRESH_TOKEN = 'refreshToken';
 
