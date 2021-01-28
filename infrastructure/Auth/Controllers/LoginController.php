@@ -2,18 +2,17 @@
 
 namespace Infrastructure\Auth\Controllers;
 
-use Illuminate\Http\Request;
-use Infrastructure\Auth\Services\LoginProxy;
+use Infrastructure\Auth\Services\LoginService;
 use Infrastructure\Auth\Requests\LoginRequest;
 use Infrastructure\Abstracts\Controller;
 
 class LoginController extends Controller
 {
-    private $loginProxy;
+    private $loginService;
 
-    public function __construct(LoginProxy $loginProxy)
+    public function __construct(LoginService $loginService)
     {
-        $this->loginProxy = $loginProxy;
+        $this->loginService = $loginService;
     }
 
     public function login(LoginRequest $request)
@@ -21,17 +20,17 @@ class LoginController extends Controller
         $email = $request->get('email');
         $password = $request->get('password');
 
-        return $this->response($this->loginProxy->attemptLogin($email, $password));
+        return $this->response($this->loginService->attemptLogin($email, $password));
     }
 
-    public function refresh(Request $request)
+    public function refresh()
     {
-        return $this->response($this->loginProxy->attemptRefresh());
+        return $this->response($this->loginService->attemptRefresh());
     }
 
     public function logout()
     {
-        $this->loginProxy->logout();
+        $this->loginService->logout();
 
         return $this->response(null, 204);
     }
