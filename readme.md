@@ -62,14 +62,17 @@ PASSWORD_CLIENT_ID=2
 PASSWORD_CLIENT_SECRET=FJWQRS3PQj6atM6fz5f6AtDboo59toGplcuUYrKL
 ```
 
-If you want to save it elsewhere or change the naming be sure to modify the LoginProxy in `infrastructure/Auth/Services/LoginProxy.php`
+If you want to save it elsewhere or change the naming be sure to modify the LoginService in `infrastructure/Auth/Services/LoginService.php`
+
+If you want to use docker to install composer dependencies use this [script](https://laravel.com/docs/8.x/sail#installing-composer-dependencies-for-existing-projects).
 
 ### Test installation
 
 You can quickly test if the authentication works by creating an user using the include command.
 
 ```bash
-php artisan users:add Gentrit Abazi gentritabazi01@gmail.com mypassword
+php artisan users:add {first_name} {last_name} {email} {password}
+Example: php artisan users:add Gentrit Abazi gentritabazi01@gmail.com mypassword
 ```
 
 Now serve your application and try to request a token using cURL
