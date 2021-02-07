@@ -16,7 +16,23 @@ Package is inspired from [esbenp/larapi](https://github.com/esbenp/larapi) with 
 
 ### [This project is built with one2tek/larapi package](https://github.com/one2tek/larapi)
 
-### Installation
+### Automatic Installation
+
+```bash
+git clone https://github.com/gentritabazi01/Clean-Laravel-Api && cd Clean-Laravel-Api && sh ./scripts/install.sh
+```
+
+This will:
+
+- Create the project.
+- Install the dependencies.
+- Copy the .env.example to .env in the project root.
+- Generate the `APP_KEY`.
+- Create a symbolic link from `public/storage` to `storage/app/public`.
+
+Update your `.env` file as needed and install passport (check below how to install passport);
+
+### Manual Installation
 
 First clone the repository.
 ```bash
