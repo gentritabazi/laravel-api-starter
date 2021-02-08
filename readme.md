@@ -1,7 +1,6 @@
 ### Introduction
 
-**Clean-Laravel-Api** offers you to do modern API development in Laravel.
-Package is inspired from [esbenp/larapi](https://github.com/esbenp/larapi) with some cool modifications and also support for new versions of Laravel.
+**Clean-Laravel-Api** offers you to do modern API development in Laravel. Project has also support for new versions of Laravel.
 
 **Clean-Laravel-Api** comes included with...
 * Support for [Laravel 7.0](https://github.com/gentritabazi01/Clean-Laravel-Api/tree/Laravel-7) and [Laravel 8.0](https://github.com/gentritabazi01/Clean-Laravel-Api/tree/Laravel-8).
@@ -11,6 +10,8 @@ Package is inspired from [esbenp/larapi](https://github.com/esbenp/larapi) with 
 * A base controller class that gives sorting, filtering, eager loading and pagination for your endpoints.
 * A base repository class for requesting entities from your database.
 * A library for creating advanced structures of related entities.
+
+
 ![...](pic.png?raw=true "...")
 
 
