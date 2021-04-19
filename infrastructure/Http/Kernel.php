@@ -45,5 +45,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'logger' => \Infrastructure\Http\Middlewares\Logger::class,
+        'role' => Laratrust\Middleware\LaratrustRole::class,
     ];
 }

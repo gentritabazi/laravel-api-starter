@@ -1,4 +1,4 @@
-echo "Installing Clean Laravel Api..."
+echo "Installing Project..."
 
 docker run --rm \
     -v $(pwd):/opt \
@@ -8,4 +8,4 @@ docker run --rm \
 cp .env.example .env
 ./vendor/bin/sail up -d && ./vendor/bin/sail artisan key:generate && ./vendor/bin/sail artisan storage:link
 
-echo "Clean Laravel Api Installed!"
+echo "Project Installed!"

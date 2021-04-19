@@ -1,8 +1,8 @@
-echo "Installing Clean Laravel Api..."
+echo "Installing Project..."
 
 composer install
 cp .env.example .env
 php artisan key:generate
 php artisan storage:link
 
-echo "Clean Laravel Api Installed!"
+echo "Project Installed!"

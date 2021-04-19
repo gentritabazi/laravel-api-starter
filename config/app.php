@@ -165,7 +165,7 @@ return [
         /*
          * Packages Service Providers...
          */
-        //
+        Infrastructure\Providers\LaratrustServiceProvider::class,
 
         /*
          * Application Service Providers...
