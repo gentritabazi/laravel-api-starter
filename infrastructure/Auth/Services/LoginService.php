@@ -86,7 +86,8 @@ class LoginService
         $response = $this->apiConsumer->post('/oauth/token', $data);
 
         if (!$response->isSuccessful()) {
-            throw new InvalidCredentialsException($response);
+            throw new InvalidCredentialsException();
+            // \Log::info($response);
         }
 
         $data = json_decode($response->getContent());
