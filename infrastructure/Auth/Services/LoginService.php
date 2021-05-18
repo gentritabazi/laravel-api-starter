@@ -93,6 +93,8 @@ class LoginService
         $data = json_decode($response->getContent());
 
         // Create a refresh token cookie
+        // The reason why you should save the refresh token as a HttpOnly cookie is to prevent Cross-site scripting (XSS) attacks.
+        // The HttpOnly flag tells the browser that this cookie should not be accessible through javascript.
         $this->cookie->queue(
             self::REFRESH_TOKEN,
             $data->refresh_token,
