@@ -2,9 +2,11 @@
 
 namespace Infrastructure\Auth\Services;
 
+use Exception;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Application;
-use Infrastructure\Auth\Exceptions\InvalidCredentialsException;
 use Api\Users\Repositories\UserRepository;
+use Infrastructure\Auth\Exceptions\InvalidCredentialsException;
 
 class LoginService
 {
@@ -47,6 +49,10 @@ class LoginService
             throw new InvalidCredentialsException();
         }
 
+        if (!Hash::check($password, $user->password)) {
+            throw new InvalidCredentialsException();
+        }
+
         return $this->proxy('password', [
             'id' => $user->id,
             'first_name' => $user->first_name,
@@ -86,8 +92,7 @@ class LoginService
         $response = $this->apiConsumer->post('/oauth/token', $data);
 
         if (!$response->isSuccessful()) {
-            throw new InvalidCredentialsException();
-            // \Log::info($response);
+            throw new Exception($response);
         }
 
         $data = json_decode($response->getContent());
