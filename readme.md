@@ -27,11 +27,11 @@ This will:
 
 - Create the project.
 - Install the dependencies.
-- Copy the .env.example to .env in the project root.
+- Create the `.env` file in the project root.
 - Generate the `APP_KEY`.
 - Create a symbolic link from `public/storage` to `storage/app/public`.
 
-Update your `.env` file as needed and install passport (check below how to install passport);
+Now you just need to update your `.env` file as needed and install passport (check below how to install passport).
 
 ### Manual Installation
 
