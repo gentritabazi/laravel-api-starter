@@ -6,7 +6,7 @@ return [
 
     'extra_routes' => [
         'routes' => [
-            'middleware' => ['auth:api'],
+            'middleware' => [],
             'namespace' => 'Controllers',
             'prefix' => null
         ],
