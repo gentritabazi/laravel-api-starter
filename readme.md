@@ -1,8 +1,9 @@
 ### Introduction
 
-**Clean-Laravel-Api** offers you to do modern API development in Laravel. Project has also support for new versions of Laravel.
+**Clean-Laravel-Api** offers you to do modern API development in Laravel. This starter project is crafted to simplify and accelerate your API development journey with Laravel.
 
 **Clean-Laravel-Api** comes included with...
+
 * Support for [Laravel 7.0](https://github.com/gentritabazi01/Clean-Laravel-Api/tree/Laravel-7) and [Laravel 8.0](https://github.com/gentritabazi01/Clean-Laravel-Api/tree/Laravel-8).
 * Laravel Passport for OAuth Authentication, including a proxy for password and refresh-token grants.
 * A new directory structure optimized for separating infrastructure and domain code. Groups your controllers, models, etc. by resource-type. 
