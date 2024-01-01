@@ -1,9 +1,8 @@
 ### Introduction
 
-**Clean-Laravel-Api** offers you to do modern API development in Laravel. This starter project is crafted to simplify and accelerate your API development journey with Laravel.
-The project is a starter that helps you start your next project on Laravel (working with API), as it provides a lot of the common tools you may reach for, all ready to go.
+**Laravel API Starter** streamlines modern API development in Laravel. This carefully crafted starter project is designed to simplify and expedite your journey in building APIs with Laravel. Serving as a launchpad for your next project, it equips you with a comprehensive set of ready-to-use tools commonly required in API development. Save time and kickstart your Laravel API project effortlessly with **Laravel API Starter**.
 
-**Clean-Laravel-Api** comes included with...
+**Laravel API Starter** comes included with...
 
 * Support for [Laravel 7.0](https://github.com/gentritabazi01/Clean-Laravel-Api/tree/Laravel-7) and [Laravel 8.0](https://github.com/gentritabazi01/Clean-Laravel-Api/tree/Laravel-8).
 * Laravel Passport for OAuth Authentication, including a proxy for password and refresh-token grants.
