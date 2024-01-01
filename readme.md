@@ -4,7 +4,6 @@
 
 **Laravel API Starter** comes included with...
 
-* Support for [Laravel 7.0](https://github.com/gentritabazi/laravel-api-starter/tree/Laravel-7) and [Laravel 8.0](https://github.com/gentritabazi/laravel-api-starter/tree/Laravel-8).
 * Laravel Passport for OAuth Authentication, including a proxy for password and refresh-token grants.
 * A new directory structure optimized for separating infrastructure and domain code. Groups your controllers, models, etc. by resource-type. 
 * A modern exception handler for APIs.
@@ -81,7 +80,7 @@ If you want to save it elsewhere or change the naming be sure to modify the Logi
 
 If you want to use docker to install composer dependencies use this [script](https://laravel.com/docs/8.x/sail#installing-composer-dependencies-for-existing-projects).
 
-### Test installation
+## Test installation
 
 You can quickly test if the authentication works by creating an user using the include command.
 
@@ -133,3 +132,8 @@ This should return a response like so
 ```
 
 You can refresh a new token by requesting `POST /login/refresh` and logout using `POST /logout`.
+
+## Directory structure example
+
+- [Laravel 7.0](https://github.com/gentritabazi/laravel-api-starter/tree/Laravel-7)
+- [Laravel 8.0](https://github.com/gentritabazi/laravel-api-starter/tree/Laravel-8).
