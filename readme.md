@@ -1,6 +1,7 @@
 ### Introduction
 
 **Clean-Laravel-Api** offers you to do modern API development in Laravel. This starter project is crafted to simplify and accelerate your API development journey with Laravel.
+The project is a starter that helps you start your next project on Laravel (working with API), as it provides a lot of the common tools you may reach for, all ready to go.
 
 **Clean-Laravel-Api** comes included with...
 
